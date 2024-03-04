@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Билет на Марс</title>
+</head>
+
+<body class="root">
+    <div class="page section">
+        <div class="hazes">
+            <div class="hazes_part-one"></div>
+            <div class="hazes_part-two"></div>
+        </div>
+        <header class="header">
+            <img class="header__logo" src="/images/logo.svg" alt="Логотип сайта">
+            <nav class="navigation">
+                <ul class="navigation__menu">
+                    <li class="navigation__item text-style">
+                        <a class="navigation__item__link" href="#">О марсе</a>
+                    </li>
+                    <li class="navigation__item text-style">
+                        <a class="navigation__item__link" href="#">Процесс</a>
+                    </li>
+                    <li class="navigation__item text-style">
+                        <a class="navigation__item__link" href="#">Билеты</a>
+                    </li>
+                    <li class="navigation__item text-style">
+                        <a class="navigation__item__link" href="#">Новости</a>
+                    </li>
+                    <li class="navigation__item text-style">
+                        <a class="navigation__item__link" href="#">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="button text-style">Купить билеты</button>
+
+        </header>
+        <main class="main-page">
+            <section class="presentation">
+                <h1 class="presentation__title text-style">Точка назначения:</h1>
+                <div class="presentation__content">
+                    <video class="presentation__video" autoplay muted loop>
+                        <source src="./video/Mars.m4v">
+                    </video>
+
+                    <svg height="100%" width="100%">
+                        <clipPath id="svgPath" width="100%" height="100%">
+                            <text class="presentation__subtitle text-style" height="100%" x="0" y="0">Марс</text>
+                        </clipPath>
+                    </svg>
+                </div>
+
+
+                <!-- <div class="line-way"></div> -->
+
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

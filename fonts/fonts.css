@@ -1,0 +1,34 @@
+@font-face {
+  src: url(../fonts/Montserrat-Regular.ttf) format('truetype');
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  src: url(../fonts/Montserrat-Medium.ttf) format('truetype');
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  src: url(../fonts/Montserrat-SemiBold.ttf) format('truetype');
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  src: url(../fonts/Montserrat-Bold.ttf) format('truetype');
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  src: url(../fonts/BebasNeue-Bold.ttf) format('truetype');
+  font-family: 'BebasNeue';
+  font-weight: 700;
+  font-display: swap;
+}
