@@ -159,6 +159,7 @@ html {
     /* height: 74.6rem; */
     /* margin: 0 0 0 3.1rem; */
     outline: red 1px solid;
+    margin-left: 3rem;
 }
 
 
@@ -172,7 +173,6 @@ html {
     outline: red 1px yellow;
     mask-image: url(..//images/marsText.svg);
     mask-repeat: no-repeat;
-    /* clip-path: url(#svgPath); */
 }
 
 
