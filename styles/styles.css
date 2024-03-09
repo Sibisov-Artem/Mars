@@ -136,6 +136,7 @@ html {
 
 .presentation__wrapper {
     position: relative;
+    padding-top: 1rem;
 }
 
 .presentation__title {
@@ -144,19 +145,20 @@ html {
     font-weight: 500;
     line-height: 4.388rem;
     letter-spacing: 0.025em;
-    margin: 1rem 0 0 3.1rem;
+    margin: 0 0 0 3.1rem;
 }
 
 @media screen and (max-width: 1430px) {
     .presentation__title {
         font-size: 2.5vw;
-        margin: 1rem 0 0 2.153vw;
+        margin-left: 2.153vw;
     }
 }
 
 .decor-way {
     position: absolute;
-    height: 100%;
+    top: 0;
+    height: 89.3%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,6 +169,7 @@ html {
     height: 0.417vw;
     border-radius: 50%;
     background-color: #D9D9D9;
+    position: absolute;
 }
 
 @media screen and (max-width: 1430px) {
@@ -193,19 +196,21 @@ html {
     height: 0.694vw;
     border-radius: 50%;
     background-color: #D9D9D9;
+    position: absolute;
+    bottom: 0;
 }
 
 @media screen and (max-width:1430px) {
     .decor-way__circle-second {
-        width: 0.1rem;
-        height: 0.1rem;
+        width: 1rem;
+        height: 1rem;
     }
 }
 
 .presentation__content {
     position: relative;
     outline: red 1px solid;
-    margin-left: 3rem;
+    margin-left: 3.1rem;
 }
 
 @media screen and (max-width: 1430px) {
@@ -218,7 +223,6 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    outline: red 1px yellow;
     mask-image: url(..//images/marsText.svg);
     mask-repeat: no-repeat;
 }
