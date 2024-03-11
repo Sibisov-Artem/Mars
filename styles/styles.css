@@ -233,3 +233,57 @@ html {
         font-size: calc(715.25 * (100vw/1440));
     }
 }
+
+.popup {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #F2E1C2;
+    width: 100%;
+    height: 100%;
+}
+
+.popup__container {
+    outline: red 1px solid;
+    max-width: 120rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.popup__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: #262526;
+    border: none;
+    background-image: url(../images/close-btn.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.popup__title {
+    font-family: 'BebasNeue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 11.4rem;
+    line-height: 11.4rem;
+    letter-spacing: 0.025rem;
+}
+
+.popup__form {
+    margin-top: 8rem;
+}
+
+.popup__input-container {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popup__input-title {}
+
+.popup__input {}
+
+.popup__submit-btn {}
