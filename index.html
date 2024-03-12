@@ -62,24 +62,32 @@
 
     </div>
     <div class="popup">
-        <div class="popup__container section">
-            <button class="popup__close-btn" type="button"></button>
-            <h2 class="popup__title">Бронирование<br>билетов</h2>
-            <form class="popup__form">
+        <div class="popup__wrapper">
+            <div class="popup__container section">
+                <button class="popup__close-btn" type="button"></button>
+                <h2 class="popup__title">Бронирование<br>билетов</h2>
+                <form class="popup__form">
+                    <fieldset class="popup__form-container">
+                        <div class="popup__form-item">
+                            <label class="popup__input-title" for="check-in-date">Дата заезда</label>
+                            <input class="popup__input" type="text" required name="check-in-date" id="check-in-date"
+                                value="13.05.2022">
+                        </div>
+                        <div class="popup__form-item">
+                            <label class="popup__input-title" for="check-out-date">Дата выезда</label>
+                            <input class="popup__input" type="text" required name="check-out-date" id="check-out-date"
+                                value="13.05.2032">
+                        </div>
+                        <div class="popup__form-item">
+                            <label class="popup__input-title" for="number-of-people">Количество</label>
+                            <input class="popup__input" type="text" required name="number-of-people"
+                                id="number-of-people" value="1 человек">
+                        </div>
+                    </fieldset>
+                    <button class="popup__form-btn text-style" type="submit">Купить билеты</button>
 
-                <fieldset class="popup__input-container">
-                    <span class="popup__input-title">Дата заезда</span>
-                    <input class="popup__input" type="text" required value="13.05.2022">
-
-                    <span class="popup__input-title">Дата выезда</span>
-                    <input class="popup__input" type="text" required value="13.05.2032">
-
-                    <span class="popup__input-title">Количество</span>
-                    <input class="popup__input" type="text" required value="1 человек">
-                </fieldset>
-                <button class="popup__submit-btn text-style" type="submit">Купить билеты</button>
-
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </body>
