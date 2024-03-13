@@ -245,11 +245,10 @@ html {
 }
 
 .popup__wrapper {
-    padding-top: 10rem;
+    padding-top: 8.7rem;
 }
 
 .popup__container {
-    outline: red 1px solid;
     max-width: 120rem;
     margin: 0 auto;
     position: relative;
@@ -257,7 +256,7 @@ html {
 
 .popup__close-btn {
     position: absolute;
-    top: 0;
+    top: 13px;
     right: 0;
     width: 3.2rem;
     height: 3.2rem;
@@ -272,9 +271,9 @@ html {
     font-family: 'BebasNeue', Arial, sans-serif;
     font-weight: 700;
     font-size: 11.4rem;
-    line-height: 11.4rem;
+    line-height: 1;
     letter-spacing: 0.285rem;
-    margin: 0 0 8rem 0;
+    margin: 0 0 9.4rem 0;
 }
 
 .popup__form {
@@ -287,7 +286,7 @@ html {
     gap: 2rem;
     border: none;
     padding: 0;
-    margin: 0 0 6rem 0;
+    margin: 0;
 }
 
 .popup__form-item {
@@ -301,6 +300,7 @@ html {
     line-height: 1.95rem;
     font-weight: 700;
     color: #262526;
+    margin-bottom: 1.9rem;
 }
 
 .popup__input {
@@ -310,19 +310,21 @@ html {
     color: #262526;
     background-color: inherit;
     border: none;
-
+    margin: 0;
+    padding: 0 0 1.24rem 0;
     border-bottom: #262526 0.2rem solid;
+    outline: none;
 }
 
 .popup__form-btn {
-    width: 38.7rem;
+    width: 100%;
     height: 4rem;
     font-size: 1.6rem;
     line-height: 1.95rem;
     font-weight: 600;
     color: #F2E1C2;
     background-color: #262526;
-    margin-left: auto;
+    margin-top: 6rem;
     border: none;
     border-radius: 0.4rem;
 }
