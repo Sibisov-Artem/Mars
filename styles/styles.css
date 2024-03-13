@@ -267,6 +267,12 @@ html {
     background-position: center;
 }
 
+@media screen and (max-width: 550px) {
+    .popup__close-btn {
+        top: 5px;
+    }
+}
+
 .popup__title {
     font-family: 'BebasNeue', Arial, sans-serif;
     font-weight: 700;
@@ -274,6 +280,18 @@ html {
     line-height: 1;
     letter-spacing: 0.285rem;
     margin: 0 0 9.4rem 0;
+}
+
+@media screen and (max-width: 1270px) {
+    .popup__title {
+        font-size: 8.97vw;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .popup__title {
+        font-size: 3.75rem;
+    }
 }
 
 .popup__form {
@@ -287,6 +305,12 @@ html {
     border: none;
     padding: 0;
     margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .popup__form-container {
+        flex-direction: column;
+    }
 }
 
 .popup__form-item {
@@ -314,6 +338,12 @@ html {
     padding: 0 0 1.24rem 0;
     border-bottom: #262526 0.2rem solid;
     outline: none;
+}
+
+@media screen and (max-width: 900px) {
+    .popup__input {
+        text-align: center;
+    }
 }
 
 .popup__form-btn {
