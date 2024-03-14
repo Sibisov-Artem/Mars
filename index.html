@@ -35,7 +35,10 @@
                     </li>
                 </ul>
             </nav>
-            <button class="button text-style">Купить&nbsp;билеты</button>
+            <button class="header__buy-btn text-style">Купить&nbsp;билеты</button>
+            <button class="header__burger-btn burger-btn">
+                <span class="burger-btn__central-line"> </span>
+            </button>
 
         </header>
         <main class="main-page">
@@ -67,6 +70,7 @@
                 <button class="popup__close-btn" type="button"></button>
                 <h2 class="popup__title">Бронирование<br>билетов</h2>
                 <form class="popup__form">
+                    <!-- потом добавить класс popup__form-buy и  для формы form-buy и использовать вместо popup__form -->
                     <fieldset class="popup__form-container">
                         <div class="popup__form-item">
                             <label class="popup__input-title" for="check-in-date">Дата заезда</label>
@@ -82,7 +86,7 @@
                             <label class="popup__input-title" for="number-of-people">Количество</label>
                             <input class="popup__input" type="text" required name="number-of-people"
                                 id="number-of-people" value="1 человек">
-                            <button class="popup__form-btn text-style" type="submit">Купить билеты</button>
+                            <button class="popup__form-buy-btn text-style" type="submit">Купить билеты</button>
                         </div>
                     </fieldset>
                 </form>

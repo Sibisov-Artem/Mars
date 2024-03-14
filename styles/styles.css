@@ -69,10 +69,134 @@ html {
     height: 3.6rem;
 }
 
+@media screen and (max-width: 1430px) {
+    .header__logo {
+        height: 3.5rem;
+    }
+}
+
+.header__buy-btn {
+    width: 17.9rem;
+    height: 4rem;
+    margin: 0 0 0 4rem;
+    color: #262526;
+    background-color: #F2E1C2;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.95rem;
+    padding: 0;
+    border-radius: 0.4rem;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:940px) {
+    .header__buy-btn {
+        margin-left: auto;
+        width: 14.5rem;
+        height: 3.5rem;
+        font-size: 1.4rem;
+    }
+}
+
+.header__burger-btn {
+    margin-left: 3rem;
+    /* display: none; */
+}
+
+.burger-btn {
+    display: none;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 23px;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    padding: 0;
+}
+
+@media screen and (max-width: 940px) {
+    .burger-btn {
+        display: flex;
+    }
+}
+
+.burger-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #F23207;
+    transition: all .4s ease;
+}
+
+.burger-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #F23207;
+    transition: all .4s ease;
+}
+
+.burger-btn__central-line {
+    height: 3px;
+    width: 100%;
+    transform: scale(1);
+    background-color: #F23207;
+    transition: transform .4s ease;
+}
+
+.burger-btn__central-line_disable {
+    transform: scale(0);
+}
+
+.burger-btn_active {
+    position: fixed;
+    top: 17.6px;
+    right: 13.6px;
+    width: 22px;
+    height: 23px;
+}
+
+.burger-btn_active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -60%);
+}
+
+.burger-btn_active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 70%);
+}
+
 .navigation {
     display: flex;
     align-items: center;
     margin-left: auto;
+}
+
+@media screen and (max-width: 940px) {
+    .navigation_active {
+        right: 0;
+        transition: all .4s ease;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .navigation {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 50vw;
+        z-index: 1;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.6);
+    }
 }
 
 .navigation__menu {
@@ -83,6 +207,13 @@ html {
     margin: 0;
 }
 
+@media screen and (max-width: 940px) {
+    .navigation__menu {
+        flex-direction: column;
+        gap: 5rem;
+    }
+}
+
 .navigation__item {
     display: flex;
 }
@@ -91,27 +222,12 @@ html {
     text-decoration: none;
     color: #F2E1C2;
     font-size: 1.6rem;
-    font-weight: 700 500;
+    font-weight: 500;
     line-height: 1.95rem;
 }
 
 .text-style {
     text-transform: uppercase;
-}
-
-.button {
-    width: 17.9rem;
-    height: 4rem;
-    margin: 0 0 0 4rem;
-    color: #262526;
-    background-color: #F2E1C2;
-    font-size: 1.6rem;
-    font-weight: 700 600;
-    line-height: 1.95rem;
-    padding: 1rem 1.5rem;
-    border-radius: 0.4rem;
-    border: none;
-    cursor: pointer;
 }
 
 .main-page {
@@ -133,7 +249,7 @@ html {
 .presentation__title {
     color: #F23207;
     font-size: 3.6rem;
-    font-weight: 700 500;
+    font-weight: 500;
     line-height: 4.388rem;
     letter-spacing: 0.025em;
     margin: 0 0 0 3.1rem;
@@ -144,6 +260,13 @@ html {
         font-size: 2.5vw;
         margin-left: 2.153vw;
         line-height: 3.047vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .presentation__title {
+        font-size: 2rem;
+        line-height: 2.44rem;
     }
 }
 
@@ -219,7 +342,7 @@ html {
 }
 
 
-.presentation__subtitle {
+/* .presentation__subtitle {
     font-family: 'BebasNeue', Arial, sans-serif;
     font-size: 71.525rem;
     font-weight: 700 700;
@@ -232,10 +355,10 @@ html {
     .presentation__subtitle {
         font-size: calc(715.25 * (100vw/1440));
     }
-}
+} */
 
 .popup {
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -346,7 +469,7 @@ html {
     }
 }
 
-.popup__form-btn {
+.popup__form-buy-btn {
     width: 100%;
     height: 4rem;
     font-size: 1.6rem;
