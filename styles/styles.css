@@ -101,7 +101,6 @@ html {
 
 .header__burger-btn {
     margin-left: 3rem;
-    /* display: none; */
 }
 
 .burger-btn {
@@ -109,10 +108,9 @@ html {
     border: none;
     align-items: center;
     justify-content: center;
-    width: 31px;
-    height: 23px;
+    width: 3.1rem;
+    height: 2.3rem;
     position: relative;
-    z-index: 2;
     background-color: transparent;
     padding: 0;
 }
@@ -127,7 +125,7 @@ html {
     content: '';
     position: absolute;
     top: 0;
-    height: 3px;
+    height: 0.3rem;
     width: 100%;
     background-color: #F23207;
     transition: all .4s ease;
@@ -137,14 +135,14 @@ html {
     content: '';
     position: absolute;
     bottom: 0;
-    height: 3px;
+    height: 0.3rem;
     width: 100%;
     background-color: #F23207;
     transition: all .4s ease;
 }
 
 .burger-btn__central-line {
-    height: 3px;
+    height: 0.3rem;
     width: 100%;
     transform: scale(1);
     background-color: #F23207;
@@ -157,10 +155,10 @@ html {
 
 .burger-btn_active {
     position: fixed;
-    top: 17.6px;
-    right: 13.6px;
-    width: 22px;
-    height: 23px;
+    top: 0.176rem;
+    right: 0.136rem;
+    width: 2.2rem;
+    height: 2.3rem;
 }
 
 .burger-btn_active::before {
@@ -341,22 +339,6 @@ html {
     mask-repeat: no-repeat;
 }
 
-
-/* .presentation__subtitle {
-    font-family: 'BebasNeue', Arial, sans-serif;
-    font-size: 71.525rem;
-    font-weight: 700 700;
-    line-height: 58rem;
-    letter-spacing: -0.015em;
-    margin: 0;
-}
-
-@media screen and (max-width: 1430px) {
-    .presentation__subtitle {
-        font-size: calc(715.25 * (100vw/1440));
-    }
-} */
-
 .popup {
     display: none;
     position: fixed;
@@ -379,7 +361,7 @@ html {
 
 .popup__close-btn {
     position: absolute;
-    top: 13px;
+    top: 1.3rem;
     right: 0;
     width: 3.2rem;
     height: 3.2rem;
@@ -392,7 +374,7 @@ html {
 
 @media screen and (max-width: 550px) {
     .popup__close-btn {
-        top: 5px;
+        top: 0.5rem;
     }
 }
 
