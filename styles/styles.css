@@ -121,14 +121,27 @@ html {
     }
 }
 
+.burger-btn:hover {
+    cursor: pointer;
+}
+
+.burger-btn:hover .burger-btn__central-line {
+    background-color: #F23207;
+    cursor: pointer;
+}
+
 .burger-btn::before {
     content: '';
     position: absolute;
     top: 0;
     height: 0.3rem;
     width: 100%;
-    background-color: #F23207;
+    background-color: #F2E1C2;
     transition: all .4s ease;
+}
+
+.burger-btn:hover::before {
+    background-color: #F23207;
 }
 
 .burger-btn::after {
@@ -137,16 +150,24 @@ html {
     bottom: 0;
     height: 0.3rem;
     width: 100%;
-    background-color: #F23207;
+    background-color: #F2E1C2;
     transition: all .4s ease;
+}
+
+.burger-btn:hover::after {
+    background-color: #F23207;
 }
 
 .burger-btn__central-line {
     height: 0.3rem;
     width: 100%;
     transform: scale(1);
+    background-color: #F2E1C2;
+    transition: all .4s ease;
+}
+
+.burger-btn__central-line:hover {
     background-color: #F23207;
-    transition: transform .4s ease;
 }
 
 .burger-btn__central-line_disable {
@@ -169,6 +190,16 @@ html {
 .burger-btn_active::after {
     bottom: 50%;
     transform: rotate(45deg) translate(0, 70%);
+}
+
+.btn-hover {
+    transition: all .4s ease;
+}
+
+.btn-hover:hover {
+    cursor: pointer;
+    background-color: #F23207;
+    color: #F2E1C2;
 }
 
 .navigation {
@@ -222,6 +253,12 @@ html {
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.95rem;
+    transition: all .4s ease;
+}
+
+.navigation__item__link:hover {
+    color: #F23207;
+    cursor: pointer;
 }
 
 .text-style {
