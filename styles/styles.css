@@ -393,6 +393,8 @@ html {
 }
 
 .presentation__video {
+    opacity: 0;
+    animation: fade-in 1.2s linear 1.2s forwards;
     width: 100%;
     height: 100%;
     object-fit: cover;
