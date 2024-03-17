@@ -282,12 +282,23 @@ html {
 }
 
 .presentation__title {
+    animation: fade-in 1.2s ease-in forwards;
     color: #F23207;
     font-size: 3.6rem;
     font-weight: 500;
     line-height: 4.388rem;
     letter-spacing: 0.025em;
     margin: 0 0 0 3.1rem;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 1430px) {
