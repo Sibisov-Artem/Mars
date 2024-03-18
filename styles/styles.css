@@ -29,25 +29,40 @@ html {
 }
 
 .hazes {
-    position: absolute;
+    background-image: url(../images/hazes.png);
+    background-size: cover;
+    background-repeat: repeat-x;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    display: none;
-    opacity: 0.8;
-    overflow: hidden;
+    opacity: 0;
+    animation: hazes-dynamic 10s linear 1.2s forwards;
 }
 
-.hazes_part-one {
-    background: url(../images/haze.jpg) center/cover no-repeat;
-    min-width: 192rem;
-}
+@keyframes hazes-dynamic {
+    0% {
+        opacity: 0;
+    }
 
-.hazes_part-two {
-    background: url(../images/haze.jpg) center/cover no-repeat;
-    min-width: 192rem;
-    transform: scale(-1, 1);
+    25% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0;
+        background-position: -200vw;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+        background-position: -400vw center;
+    }
 }
 
 .header {
