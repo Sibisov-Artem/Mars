@@ -8,11 +8,11 @@ html {
 
 .root {
     background-image: url(../images/background.jpg);
-    background-size: 130vw auto;
+    background-size: 134vw auto;
     background-position: center;
     height: 100vh;
     font-family: 'Montserrat', Arial, sans-serif;
-    transition: all 0.4s;
+    transition: background-position-x 0.4s;
 }
 
 .page {
