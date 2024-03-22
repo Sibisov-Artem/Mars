@@ -1,13 +1,24 @@
 const root = document.querySelector('.root');
 
-root.addEventListener("mousemove", (e) => {
+// условие для изменения размера бэкграунда 
+// при определенном превышении высоты экрана над шириной.
+// По умолчанию задана определенная ширина бэкграунда
+// и при снижении ширины по отношению к высоте ниже отношения 1280/965
+// начинается вертикальный repeat
+if ((window.innerWidth / window.innerHeight) < (1280 / 965)) {
+    root.style.backgroundSize = 'cover';
+}
+
+// слушатель для смещения бэкграунда 
+// при пересечении указателем определенных границ ширины экрана
+root.addEventListener('mousemove', (e) => {
     let leftLimit = window.innerWidth * 0.35;
     let rightLimit = window.innerWidth * 0.65;
     if (e.clientX < leftLimit) {
-        root.style.backgroundPositionX = "-5vw";
+        root.style.backgroundPositionX = '-5vw';
     } else if (e.clientX > rightLimit) {
-        root.style.backgroundPositionX = "-25vw";
+        root.style.backgroundPositionX = '-25vw';
     } else {
-        root.style.backgroundPositionX = "-15vw";
+        root.style.backgroundPositionX = '-15vw';
     }
 });
