@@ -1,4 +1,6 @@
 const root = document.querySelector('.root');
+const buyTicketHeaderBtn = root.querySelector('.header__buy-btn');
+const BuyTicketPopup = root.querySelector('.popup');
 
 // условие для изменения размера бэкграунда 
 // при определенном превышении высоты экрана над шириной.
@@ -7,6 +9,11 @@ const root = document.querySelector('.root');
 // начинается вертикальный repeat
 if ((window.innerWidth / window.innerHeight) < (1280 / 965)) {
     root.style.backgroundSize = 'cover';
+}
+
+// функция открытия попапа покупки билета
+function openPopup(popup) {
+    popup.classList.add('popup_active');
 }
 
 // слушатель для смещения бэкграунда 
@@ -21,4 +28,9 @@ root.addEventListener('mousemove', (e) => {
     } else {
         root.style.backgroundPositionX = '-15vw';
     }
+});
+
+//слушатель открытия попапа покупки билета
+buyTicketHeaderBtn.addEventListener('click', () => {
+    openPopup(BuyTicketPopup);
 });
