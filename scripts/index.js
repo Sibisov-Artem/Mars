@@ -1,6 +1,7 @@
 const root = document.querySelector('.root');
 const buyTicketHeaderBtn = root.querySelector('.header__buy-btn');
 const BuyTicketPopup = root.querySelector('.popup');
+const popupCloseBtn = BuyTicketPopup.querySelector('.popup__close-btn');
 
 // условие для изменения размера бэкграунда 
 // при определенном превышении высоты экрана над шириной.
@@ -14,6 +15,10 @@ if ((window.innerWidth / window.innerHeight) < (1280 / 965)) {
 // функция открытия попапа покупки билета
 function openPopup(popup) {
     popup.classList.add('popup_active');
+}
+
+function closePopup(popup) {
+    popup.classList.remove('popup_active');
 }
 
 // слушатель для смещения бэкграунда 
@@ -34,3 +39,7 @@ root.addEventListener('mousemove', (e) => {
 buyTicketHeaderBtn.addEventListener('click', () => {
     openPopup(BuyTicketPopup);
 });
+
+popupCloseBtn.addEventListener('click', () => {
+    closePopup(BuyTicketPopup); 
+})
