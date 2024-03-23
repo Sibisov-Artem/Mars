@@ -21,7 +21,7 @@ function openPopup(popup) {
 // функция закрытия попапа покупки билета
 function closePopup(popup) {
     popup.classList.remove('popup_active');
-    document.removeEventListener('keydown', closePopupEsc) //удаляем  слушатель событий, из-за не актуальности при закрытом попапе
+    document.removeEventListener('keydown', closePopupEsc); //удаляем  слушатель событий, из-за не актуальности при закрытом попапе
 }
 
 // функция для закрытия попапа по нажатию на Escape
@@ -54,4 +54,4 @@ buyTicketHeaderBtn.addEventListener('click', () => {
 //слушатель закрытия попапа покупки билета
 popupCloseBtn.addEventListener('click', () => {
     closePopup(BuyTicketPopup);
-})
+});

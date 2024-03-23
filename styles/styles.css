@@ -421,17 +421,20 @@ html {
 }
 
 .popup {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;
     background-color: #F2E1C2;
     width: 100%;
     height: 100%;
+    transition: visibility 0.4s, opacity 0.4s ;
 }
 
-.popup_active{
-    display: block;
+.popup_active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .popup__wrapper {
