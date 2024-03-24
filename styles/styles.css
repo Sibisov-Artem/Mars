@@ -6,6 +6,10 @@ html {
     font-size: 62.5%;
 }
 
+button {
+    outline: none;
+}
+
 .root {
     background-image: url(../images/background.jpg);
     background-size: 134vw auto;
@@ -429,7 +433,7 @@ html {
     background-color: #F2E1C2;
     width: 100%;
     height: 100%;
-    transition: visibility 0.4s, opacity 0.4s ;
+    transition: visibility 0.4s, opacity 0.4s;
 }
 
 .popup_active {
