@@ -1,7 +1,11 @@
 const root = document.querySelector('.root');
+const header = root.querySelector('.header');
 const buyTicketHeaderBtn = root.querySelector('.header__buy-btn');
-const BuyTicketPopup = root.querySelector('.popup');
-const popupCloseBtn = BuyTicketPopup.querySelector('.popup__close-btn');
+const buyTicketPopup = root.querySelector('.popup');
+const popupCloseBtn = buyTicketPopup.querySelector('.popup__close-btn');
+const burgerBtn = header.querySelector('.header__burger-btn');
+const burgerMenu = header.querySelector('.navigation');
+const burgerBtnCentralLine = burgerBtn.querySelector('.burger-btn__central-line');
 
 // условие для изменения размера бэкграунда 
 // при определенном превышении высоты экрана над шириной.
@@ -32,6 +36,13 @@ function closePopupEsc(evt) {
     }
 }
 
+// функция открытия/закрытия бургер меню
+function openAndCloseBurgerMenu() {
+    burgerMenu.classList.toggle('navigation_active');
+    burgerBtn.classList.toggle('burger-btn_active');
+    burgerBtnCentralLine.classList.toggle('burger-btn__central-line_disable');
+}
+
 // слушатель для смещения бэкграунда 
 // при пересечении указателем определенных границ ширины экрана
 root.addEventListener('mousemove', (e) => {
@@ -46,12 +57,15 @@ root.addEventListener('mousemove', (e) => {
     }
 });
 
-//слушатель открытия попапа покупки билета
+// слушатель открытия попапа покупки билета
 buyTicketHeaderBtn.addEventListener('click', () => {
-    openPopup(BuyTicketPopup);
+    openPopup(buyTicketPopup);
 });
 
-//слушатель закрытия попапа покупки билета
+// слушатель закрытия попапа покупки билета
 popupCloseBtn.addEventListener('click', () => {
-    closePopup(BuyTicketPopup);
+    closePopup(buyTicketPopup);
 });
+
+// слушатель открытия бургер меню 
+burgerBtn.addEventListener('click', openAndCloseBurgerMenu)

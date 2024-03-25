@@ -197,11 +197,12 @@ button {
 }
 
 .burger-btn_active {
-    position: fixed;
+    /* position: fixed;
     top: 0.176rem;
     right: 0.136rem;
     width: 2.2rem;
-    height: 2.3rem;
+    height: 2.3rem; */
+    z-index: 1;
 }
 
 .burger-btn_active::before {
@@ -231,13 +232,6 @@ button {
 }
 
 @media screen and (max-width: 940px) {
-    .navigation_active {
-        right: 0;
-        transition: all .4s ease;
-    }
-}
-
-@media screen and (max-width: 940px) {
     .navigation {
         position: fixed;
         top: 0;
@@ -246,7 +240,15 @@ button {
         width: 50vw;
         z-index: 1;
         justify-content: center;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.85);
+        transition: right .4s ease;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .navigation_active {
+        right: 0;
+        transition: right .4s ease;
     }
 }
 
