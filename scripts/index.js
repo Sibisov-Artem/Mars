@@ -4,8 +4,11 @@ const buyTicketHeaderBtn = root.querySelector('.header__buy-btn');
 const buyTicketPopup = root.querySelector('.popup');
 const popupCloseBtn = buyTicketPopup.querySelector('.popup__close-btn');
 const burgerBtn = header.querySelector('.header__burger-btn');
-const burgerMenu = header.querySelector('.navigation');
 const burgerBtnCentralLine = burgerBtn.querySelector('.burger-btn__central-line');
+const burgerMenu = header.querySelector('.navigation');
+const burgerMenuItems = burgerMenu.querySelector('.navigation__menu');
+const burgerMenuItem = burgerMenu.querySelectorAll('.navigation__item__link');
+const burgerMenuItemArr = Array.from(burgerMenuItem);  // создаем массив от burgerMenuItem
 
 // условие для изменения размера бэкграунда 
 // при определенном превышении высоты экрана над шириной.
@@ -68,4 +71,19 @@ popupCloseBtn.addEventListener('click', () => {
 });
 
 // слушатель открытия бургер меню 
-burgerBtn.addEventListener('click', openAndCloseBurgerMenu)
+burgerBtn.addEventListener('click', openAndCloseBurgerMenu);
+
+// Закрытие бургер меню при нажатии вне меню
+document.addEventListener('mousedown', (evt) => {
+    its_menu = evt.target == burgerMenu;
+    its_menuItems = evt.target == burgerMenuItems;
+    // its_menuItem = evt.target.matches('.navigation__item__link');
+    its_menuItem = burgerMenuItemArr.some(item => {
+        return item == evt.target;
+    });
+    menu_is_active = burgerMenu.classList.contains('navigation_active');
+
+    if (!its_menu && !its_menuItems && !its_menuItem && menu_is_active) {
+        openAndCloseBurgerMenu();
+    }
+});

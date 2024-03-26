@@ -197,11 +197,6 @@ button {
 }
 
 .burger-btn_active {
-    /* position: fixed;
-    top: 0.176rem;
-    right: 0.136rem;
-    width: 2.2rem;
-    height: 2.3rem; */
     z-index: 1;
 }
 
