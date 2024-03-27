@@ -41,9 +41,35 @@ function closePopupEsc(evt) {
 
 // функция открытия/закрытия бургер меню
 function openAndCloseBurgerMenu() {
-    burgerMenu.classList.toggle('navigation_active');
-    burgerBtn.classList.toggle('burger-btn_active');
-    burgerBtnCentralLine.classList.toggle('burger-btn__central-line_disable');
+    const menuIsActive = burgerMenu.classList.contains('navigation_active');
+    console.log(menuIsActive);
+    if (!menuIsActive) {
+        burgerMenu.classList.add('navigation_active');
+        burgerBtn.classList.add('burger-btn_active');
+        burgerBtnCentralLine.classList.add('burger-btn__central-line_disable');
+        document.addEventListener('mouseup', closeBurgerMenuOnClickOutside); // слушатель закрытия бургер меню при нажатии вне меню
+    } else {
+        burgerMenu.classList.remove('navigation_active');
+        burgerBtn.classList.remove('burger-btn_active');
+        burgerBtnCentralLine.classList.remove('burger-btn__central-line_disable');
+        document.removeEventListener('mouseup', closeBurgerMenuOnClickOutside);
+    }
+}
+
+// функция закрытия бургер меню при клике вне этого меню
+function closeBurgerMenuOnClickOutside(evt) {
+    const itsMenu = evt.target === burgerMenu;
+    const itsMenuItems = evt.target === burgerMenuItems;
+    const itsHamburger = evt.target === burgerBtn;
+    // its_menuItem = evt.target.matches('.navigation__item__link');
+    const itsMenuItem = burgerMenuItemArr.some(item => {
+        return item === evt.target;
+    });
+    const menuIsActive = burgerMenu.classList.contains('navigation_active');
+    console.log(itsMenu, itsMenuItems, itsHamburger, itsMenuItem, menuIsActive)
+    if (!itsMenu && !itsMenuItems && !itsHamburger && !itsMenuItem && menuIsActive) {
+        openAndCloseBurgerMenu();
+    }
 }
 
 // слушатель для смещения бэкграунда 
@@ -72,18 +98,3 @@ popupCloseBtn.addEventListener('click', () => {
 
 // слушатель открытия бургер меню 
 burgerBtn.addEventListener('click', openAndCloseBurgerMenu);
-
-// Закрытие бургер меню при нажатии вне меню
-document.addEventListener('mousedown', (evt) => {
-    its_menu = evt.target == burgerMenu;
-    its_menuItems = evt.target == burgerMenuItems;
-    // its_menuItem = evt.target.matches('.navigation__item__link');
-    its_menuItem = burgerMenuItemArr.some(item => {
-        return item == evt.target;
-    });
-    menu_is_active = burgerMenu.classList.contains('navigation_active');
-
-    if (!its_menu && !its_menuItems && !its_menuItem && menu_is_active) {
-        openAndCloseBurgerMenu();
-    }
-});
