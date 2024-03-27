@@ -39,20 +39,29 @@ function closePopupEsc(evt) {
     }
 }
 
-// функция открытия/закрытия бургер меню
-function openAndCloseBurgerMenu() {
+// функция открытия бургер меню
+function openBurgerMenu() {
+    burgerMenu.classList.add('navigation_active');
+    burgerBtn.classList.add('burger-btn_active');
+    burgerBtnCentralLine.classList.add('burger-btn__central-line_disable');
+    document.addEventListener('mouseup', closeBurgerMenuOnClickOutside); // слушатель закрытия бургер меню при нажатии вне меню
+}
+
+// функция закрытия бургер меню
+function closeBurgerMenu() {
+    burgerMenu.classList.remove('navigation_active');
+    burgerBtn.classList.remove('burger-btn_active');
+    burgerBtnCentralLine.classList.remove('burger-btn__central-line_disable');
+    document.removeEventListener('mouseup', closeBurgerMenuOnClickOutside);
+}
+
+// функция переключения бургер меню
+function toggleBurgerMenu() {
     const menuIsActive = burgerMenu.classList.contains('navigation_active');
-    console.log(menuIsActive);
     if (!menuIsActive) {
-        burgerMenu.classList.add('navigation_active');
-        burgerBtn.classList.add('burger-btn_active');
-        burgerBtnCentralLine.classList.add('burger-btn__central-line_disable');
-        document.addEventListener('mouseup', closeBurgerMenuOnClickOutside); // слушатель закрытия бургер меню при нажатии вне меню
+        openBurgerMenu();
     } else {
-        burgerMenu.classList.remove('navigation_active');
-        burgerBtn.classList.remove('burger-btn_active');
-        burgerBtnCentralLine.classList.remove('burger-btn__central-line_disable');
-        document.removeEventListener('mouseup', closeBurgerMenuOnClickOutside);
+        closeBurgerMenu();
     }
 }
 
@@ -68,7 +77,7 @@ function closeBurgerMenuOnClickOutside(evt) {
     const menuIsActive = burgerMenu.classList.contains('navigation_active');
     console.log(itsMenu, itsMenuItems, itsHamburger, itsMenuItem, menuIsActive)
     if (!itsMenu && !itsMenuItems && !itsHamburger && !itsMenuItem && menuIsActive) {
-        openAndCloseBurgerMenu();
+        closeBurgerMenu();
     }
 }
 
@@ -97,4 +106,4 @@ popupCloseBtn.addEventListener('click', () => {
 });
 
 // слушатель открытия бургер меню 
-burgerBtn.addEventListener('click', openAndCloseBurgerMenu);
+burgerBtn.addEventListener('click', toggleBurgerMenu);
