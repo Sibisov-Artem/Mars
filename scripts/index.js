@@ -45,6 +45,7 @@ function openBurgerMenu() {
     burgerBtn.classList.add('burger-btn_active');
     burgerBtnCentralLine.classList.add('burger-btn__central-line_disable');
     document.addEventListener('mouseup', closeBurgerMenuOnClickOutside); // слушатель закрытия бургер меню при нажатии вне меню
+    document.addEventListener('keydown', closeBurgerMenuEsc); // вешаем слушатель на закрытие бургер меню по нажатию на Escape
 }
 
 // функция закрытия бургер меню
@@ -53,6 +54,7 @@ function closeBurgerMenu() {
     burgerBtn.classList.remove('burger-btn_active');
     burgerBtnCentralLine.classList.remove('burger-btn__central-line_disable');
     document.removeEventListener('mouseup', closeBurgerMenuOnClickOutside);
+    document.removeEventListener('keydown', closeBurgerMenuEsc);
 }
 
 // функция переключения бургер меню
@@ -77,6 +79,13 @@ function closeBurgerMenuOnClickOutside(evt) {
     const menuIsActive = burgerMenu.classList.contains('navigation_active');
     console.log(itsMenu, itsMenuItems, itsHamburger, itsMenuItem, menuIsActive)
     if (!itsMenu && !itsMenuItems && !itsHamburger && !itsMenuItem && menuIsActive) {
+        closeBurgerMenu();
+    }
+}
+
+// функция закрытия бургер меню по нажатию на Escape
+function closeBurgerMenuEsc(evt) {
+    if (evt.key === "Escape") {
         closeBurgerMenu();
     }
 }
