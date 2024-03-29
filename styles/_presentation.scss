@@ -1,0 +1,62 @@
+@use 'variables' as v;
+
+.presentation {
+    padding-top: 3rem;
+    position: relative;
+
+    &__wrapper {
+        position: relative;
+        padding-top: 1rem;
+    }
+
+    &__title {
+        animation: fade-in v.$duration_fade_in ease-in-out forwards 1ms;
+        opacity: 0;
+        color: v.$color_accent;
+        font-size: 3.6rem;
+        font-weight: 500;
+        line-height: 4.388rem;
+        letter-spacing: 0.025em;
+        margin-left: 3.1rem;
+
+        @media screen and (max-width: v.$media_size_1) {
+            font-size: 2.5vw;
+            margin-left: 2.153vw;
+            line-height: 3.047vw;
+        }
+
+        @media screen and (max-width: v.$media_size_3) {
+            font-size: 2rem;
+            line-height: 2.44rem;
+        }
+    }
+
+    &__content {
+        position: relative;
+        margin-left: 3.1rem;
+
+        @media screen and (max-width: v.$media_size_1) {
+            margin-left: 2.153vw;
+        }
+    }
+
+    &__video {
+        opacity: 0;
+        animation: fade-in v.$duration_fade_in linear 1.2s forwards;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mask-image: url(..//images/marsText.svg);
+        mask-repeat: no-repeat;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

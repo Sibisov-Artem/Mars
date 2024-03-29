@@ -1,0 +1,77 @@
+@use 'variables' as v;
+
+.burger-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 3.1rem;
+    height: 2.3rem;
+    position: relative;
+    background-color: transparent;
+
+    @media screen and (max-width: v.$media_size_2) {
+        display: flex;
+    }
+
+    &:hover .burger-btn__central-line {
+        background-color: v.$color_accent;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 0.3rem;
+        width: 100%;
+        background-color: v.$color_light;
+        transition: all .4s ease;
+    }
+
+    &:hover::before {
+        background-color: v.$color_accent;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 0.3rem;
+        width: 100%;
+        background-color: v.$color_light;
+        transition: all .4s ease;
+    }
+
+    &:hover::after {
+        background-color: v.$color_accent;
+    }
+
+    &__central-line {
+        height: 0.3rem;
+        width: 100%;
+        transform: scale(1);
+        background-color: v.$color_light;
+        transition: all .4s ease;
+    }
+
+    &__central-line:hover {
+        background-color: v.$color_accent;
+    }
+
+    &__central-line_disable {
+        transform: scale(0);
+    }
+
+    &_active {
+        z-index: 1;
+    }
+
+    &_active::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0, -60%);
+    }
+
+    &_active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0, 70%);
+    }
+}

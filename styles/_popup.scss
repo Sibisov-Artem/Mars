@@ -1,0 +1,119 @@
+@use 'variables' as v;
+
+.popup {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: v.$color_light;
+    width: 100%;
+    height: 100%;
+    transition: visibility 0.4s, opacity 0.4s;
+
+    &_active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__wrapper {
+        padding-top: 8.7rem;
+    }
+
+    &__container {
+        max-width: 120rem;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 1.3rem;
+        right: 0;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-color: v.$color_dark;
+        background-image: url(../images/close-btn.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media screen and (max-width: 550px) {
+            top: 0.5rem;
+        }
+    }
+
+    &__title {
+        color: v.$color_dark;
+        font-family: v.$second_font_family;
+        font-weight: 700;
+        font-size: 11.4rem;
+        line-height: 1;
+        letter-spacing: 0.285rem;
+        margin-bottom: 9.4rem;
+
+        @media screen and (max-width: 1270px) {
+            font-size: 8.97vw;
+        }
+
+        @media screen and (max-width: 420px) {
+            font-size: 3.75rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-container {
+        display: flex;
+        gap: 2rem;
+        border: none;
+
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+        }
+    }
+
+    &__form-item {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+    }
+
+    &__input-title {
+        font-size: 1.6rem;
+        line-height: 1.95rem;
+        font-weight: 700;
+        color: v.$color_dark;
+        margin-bottom: 1.9rem;
+    }
+
+    &__input {
+        font-size: 1.6rem;
+        line-height: 1.95rem;
+        font-weight: 400;
+        color: v.$color_dark;
+        background-color: inherit;
+        border: none;
+        padding-bottom: 1.24rem;
+        border-bottom: v.$color_dark 0.2rem solid;
+        outline: none;
+
+        @media screen and (max-width: 900px) {
+            text-align: center;
+        }
+    }
+
+    &__form-buy-btn {
+        width: 100%;
+        height: 4rem;
+        font-size: 1.6rem;
+        line-height: 1.95rem;
+        font-weight: 600;
+        color: v.$color_light;
+        background-color: v.$color_dark;
+        margin-top: 6rem;
+        border-radius: 0.4rem;
+    }
+}

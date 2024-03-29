@@ -1,0 +1,47 @@
+@use 'variables' as v;
+
+.header {
+    width: 100%;
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+
+    @media screen and (max-width: v.$media_size_1) {
+        padding-top: 2.08vw;
+    }
+
+    &__logo {
+        width: 8.2rem;
+        height: 3.6rem;
+
+        @media screen and (max-width: v.$media_size_1) {
+            height: 3.5rem;
+        }
+    }
+
+    &__buy-btn {
+        width: 17.9rem;
+        height: 4rem;
+        margin-left: 4rem;
+        color: v.$color_dark;
+        background-color: v.$color_light;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.95rem;
+        padding: 0;
+        border-radius: 0.4rem;
+        border: none;
+
+        @media screen and (max-width:v.$media_size_2) {
+            margin-left: auto;
+            width: 14.5rem;
+            height: 3.5rem;
+            font-size: 1.4rem;
+        }
+    }
+
+    &__burger-btn {
+        margin-left: 3rem;
+    }
+}
