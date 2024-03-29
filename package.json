@@ -4,7 +4,8 @@
   "description": "application for buying a ticket for a flight to Mars",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --style=expanded --watch styles:dist"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Sibisov-Artem/Mars/issues"
   },
-  "homepage": "https://github.com/Sibisov-Artem/Mars#readme"
+  "homepage": "https://github.com/Sibisov-Artem/Mars#readme",
+  "devDependencies": {
+    "sass": "^1.72.0"
+  }
 }
