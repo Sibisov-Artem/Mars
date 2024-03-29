@@ -1,0 +1,19 @@
+{
+  "name": "mars",
+  "version": "1.0.0",
+  "description": "application for buying a ticket for a flight to Mars",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sibisov-Artem/Mars.git"
+  },
+  "author": "Sibisov Artem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sibisov-Artem/Mars/issues"
+  },
+  "homepage": "https://github.com/Sibisov-Artem/Mars#readme"
+}
