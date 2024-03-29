@@ -468,6 +468,7 @@ button {
 }
 
 .popup__title {
+    color: #262526;
     font-family: 'BebasNeue', Arial, sans-serif;
     font-weight: 700;
     font-size: 11.4rem;
