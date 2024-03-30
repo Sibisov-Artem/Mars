@@ -54,5 +54,9 @@
         background-color: v.$color_dark;
         margin-top: 6rem;
         border-radius: 0.4rem;
+
+        &_disabled {
+            opacity: 0.2;
+        }
     }
 }

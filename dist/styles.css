@@ -854,6 +854,9 @@ html {
   margin-top: 6rem;
   border-radius: 0.4rem;
 }
+.form__buy-btn_disabled {
+  opacity: 0.2;
+}
 
 .root {
   background-image: url(../images/background.jpg);

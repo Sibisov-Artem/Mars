@@ -4,6 +4,7 @@ const buyTicketHeaderBtn = root.querySelector('.header__buy-btn');
 const buyTicketPopup = root.querySelector('.popup');
 const formBuyTicket = buyTicketPopup.querySelector('.popup__form');
 const inputNumberOfPeople = formBuyTicket.querySelector('.form__input_number-of-people');
+const buyTicketBtn = buyTicketPopup.querySelector('.form__buy-btn');
 const popupCloseBtn = buyTicketPopup.querySelector('.popup__close-btn');
 const burgerBtn = header.querySelector('.header__burger-btn');
 const burgerBtnCentralLine = burgerBtn.querySelector('.burger-btn__central-line');
@@ -91,6 +92,20 @@ function closeBurgerMenuEsc(evt) {
     }
 }
 
+//функция отключения сабмита в форме покупки билета
+function disabledSubmitBtn() {
+    buyTicketBtn.classList.add('form__buy-btn_disabled');
+    buyTicketBtn.classList.remove('btn-hover');
+    buyTicketBtn.setAttribute('disabled', 'true');
+}
+
+//функция активации сабмита в форме покупки билета
+function enabledSubmitBtn() {
+    buyTicketBtn.classList.remove('form__buy-btn_disabled');
+    buyTicketBtn.classList.add('btn-hover');
+    buyTicketBtn.removeAttribute('disabled');
+}
+
 // слушатель для смещения бэкграунда 
 // при пересечении указателем определенных границ ширины экрана
 root.addEventListener('mousemove', (e) => {
@@ -122,14 +137,19 @@ burgerBtn.addEventListener('click', toggleBurgerMenu);
 formBuyTicket.addEventListener('input', function (evt) {
     let inputValueNumber = evt.target.value.replace(/[^0-9.]/g, '');
     inputNumberOfPeople.value = inputValueNumber;
+    if (inputValueNumber == 0) {
+        disabledSubmitBtn();
+    } else {
+        enabledSubmitBtn();
+    }
 });
 
 // слушатель дописания слова человек/человека в инпут при его покидании
 formBuyTicket.addEventListener('change', function () {
     let inputValueNumber = inputNumberOfPeople.value;
-    if (inputValueNumber == 0) { inputNumberOfPeople.value = '' }
-    else if (inputValueNumber % 10 === 2 || inputValueNumber % 10 === 3 || inputValueNumber % 10 === 4) {
+    if (inputValueNumber == 0) {
+        inputNumberOfPeople.value = '';
+    } else if (inputValueNumber % 10 === 2 || inputValueNumber % 10 === 3 || inputValueNumber % 10 === 4) {
         inputNumberOfPeople.value = `${inputValueNumber} человека`
-    }
-    else { inputNumberOfPeople.value = `${inputValueNumber} человек` }
+    } else { inputNumberOfPeople.value = `${inputValueNumber} человек` }
 });
