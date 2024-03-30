@@ -72,24 +72,23 @@
             <div class="popup__container section">
                 <button class="popup__close-btn btn-hover" type="button"></button>
                 <h2 class="popup__title">Бронирование<br>билетов</h2>
-                <form class="popup__form">
-                    <!-- потом добавить класс popup__form-buy и  для формы form-buy и использовать вместо popup__form -->
-                    <fieldset class="popup__form-container">
-                        <div class="popup__form-item">
-                            <label class="popup__input-title" for="check-in-date">Дата заезда</label>
-                            <input class="popup__input datepicker" type="text" required name="check-in-date"
+                <form class="popup__form form" autocomplete="off">
+                    <fieldset class="form__container">
+                        <div class="form__item">
+                            <label class="form__input-title" for="check-in-date">Дата заезда</label>
+                            <input class="form__input datepicker" type="text" required name="check-in-date"
                                 id="check-in-date" value="13.05.2022">
                         </div>
-                        <div class="popup__form-item">
-                            <label class="popup__input-title" for="check-out-date">Дата выезда</label>
-                            <input class="popup__input datepicker" type="text" required name="check-out-date"
+                        <div class="form__item">
+                            <label class="form__input-title" for="check-out-date">Дата выезда</label>
+                            <input class="form__input datepicker" type="text" required name="check-out-date"
                                 id="check-out-date" value="13.05.2032">
                         </div>
-                        <div class="popup__form-item">
-                            <label class="popup__input-title" for="number-of-people">Количество</label>
-                            <input class="popup__input" type="text" required name="number-of-people"
+                        <div class="form__item">
+                            <label class="form__input-title" for="number-of-people">Количество</label>
+                            <input class="form__input" type="text" required name="number-of-people"
                                 id="number-of-people" value="1 человек">
-                            <button class="popup__form-buy-btn text-style btn-hover" type="submit">Купить
+                            <button class="form__buy-btn text-style btn-hover" type="submit">Купить
                                 билеты</button>
                         </div>
                     </fieldset>
