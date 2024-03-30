@@ -2,6 +2,8 @@ const root = document.querySelector('.root');
 const header = root.querySelector('.header');
 const buyTicketHeaderBtn = root.querySelector('.header__buy-btn');
 const buyTicketPopup = root.querySelector('.popup');
+const formBuyTicket = buyTicketPopup.querySelector('.popup__form');
+const inputNumberOfPeople = formBuyTicket.querySelector('.form__input_number-of-people');
 const popupCloseBtn = buyTicketPopup.querySelector('.popup__close-btn');
 const burgerBtn = header.querySelector('.header__burger-btn');
 const burgerBtnCentralLine = burgerBtn.querySelector('.burger-btn__central-line');
@@ -77,7 +79,6 @@ function closeBurgerMenuOnClickOutside(evt) {
         return item === evt.target;
     });
     const menuIsActive = burgerMenu.classList.contains('navigation_active');
-    console.log(itsMenu, itsMenuItems, itsHamburger, itsMenuItem, menuIsActive)
     if (!itsMenu && !itsMenuItems && !itsHamburger && !itsMenuItem && menuIsActive) {
         closeBurgerMenu();
     }
@@ -116,3 +117,19 @@ popupCloseBtn.addEventListener('click', () => {
 
 // слушатель открытия бургер меню 
 burgerBtn.addEventListener('click', toggleBurgerMenu);
+
+// слушатель введения в инпут только чисел
+formBuyTicket.addEventListener('input', function (evt) {
+    let inputValueNumber = evt.target.value.replace(/[^0-9.]/g, '');
+    inputNumberOfPeople.value = inputValueNumber;
+});
+
+// слушатель дописания слова человек/человека в инпут при его покидании
+formBuyTicket.addEventListener('change', function () {
+    let inputValueNumber = inputNumberOfPeople.value;
+    if (inputValueNumber == 0) { inputNumberOfPeople.value = '' }
+    else if (inputValueNumber % 10 === 2 || inputValueNumber % 10 === 3 || inputValueNumber % 10 === 4) {
+        inputNumberOfPeople.value = `${inputValueNumber} человека`
+    }
+    else { inputNumberOfPeople.value = `${inputValueNumber} человек` }
+});
