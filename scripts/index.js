@@ -134,7 +134,7 @@ popupCloseBtn.addEventListener('click', () => {
 burgerBtn.addEventListener('click', toggleBurgerMenu);
 
 // слушатель введения в инпут только чисел
-formBuyTicket.addEventListener('input', function (evt) {
+inputNumberOfPeople.addEventListener('input', function (evt) {
     let inputValueNumber = evt.target.value.replace(/[^0-9.]/g, '');
     inputNumberOfPeople.value = inputValueNumber;
     if (inputValueNumber == 0) {
