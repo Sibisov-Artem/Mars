@@ -432,6 +432,7 @@
 }
 .form__buy-btn_disabled {
   opacity: 0.2;
+  cursor: default;
 }
 
 /*# sourceMappingURL=blocks.css.map */
