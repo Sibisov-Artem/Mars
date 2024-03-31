@@ -379,6 +379,11 @@
 .popup__title_message {
   color: #F23207;
   margin-right: 4rem;
+  transition: color 1s ease, opacity 1s ease;
+}
+.popup__title_disable-opacity {
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .form {

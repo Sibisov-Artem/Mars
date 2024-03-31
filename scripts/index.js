@@ -131,7 +131,7 @@ function checkInOutDatesValidation(checkInDate, checkOutDate) {
 
         // проверяем что дата выезда больше чем через 365 дней от даты заезда
         if (+outDate <= +inDate + 365 * 24 * 60 * 60 * 1000) {
-            buyTicketTitle.innerHTML = 'Выезжаем не ранее чем через год';
+            buyTicketTitle.textContent = 'Выезжаем не ранее чем через год';
             buyTicketTitle.classList.add('popup__title_message');
             disabledSubmitBtn();
         } else {
@@ -142,6 +142,18 @@ function checkInOutDatesValidation(checkInDate, checkOutDate) {
     } else {
         disabledSubmitBtn();
     }
+}
+
+// функция покупки билета
+function buyTicket(evt) {
+    evt.preventDefault();
+    buyTicketTitle.classList.add('popup__title_disable-opacity');
+
+    setTimeout(() => {
+        buyTicketTitle.textContent = 'Поздравляем с покупкой!';
+        buyTicketTitle.classList.remove('popup__title_disable-opacity');
+        buyTicketTitle.classList.add('popup__title_message');
+    }, 1000);
 }
 
 // слушатель для смещения бэкграунда 
@@ -201,3 +213,6 @@ inputCheckInDate.addEventListener('change', function (evt) {
 inputCheckOutDate.addEventListener('change', function (evt) {
     checkInOutDatesValidation(inputCheckInDate.value, evt.target.value);
 });
+
+// слушатель сабмита формы покупки билета
+formBuyTicket.addEventListener('submit', buyTicket);

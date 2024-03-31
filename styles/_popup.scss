@@ -62,6 +62,12 @@
         &_message {
             color: v.$color_accent;
             margin-right: 4rem;
+            transition: color 1s ease, opacity 1s ease;
+        }
+
+        &_disable-opacity {
+            opacity: 0;
+            transition: opacity 1s ease;
         }
     }
 }
