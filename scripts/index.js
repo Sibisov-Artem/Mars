@@ -199,6 +199,8 @@ inputNumberOfPeople.addEventListener('change', function () {
     let inputValueNumber = inputNumberOfPeople.value;
     if (inputValueNumber == 0) {
         inputNumberOfPeople.value = '';
+    } else if (inputValueNumber >= 12 && inputValueNumber <= 14) {
+        inputNumberOfPeople.value = `${inputValueNumber} человек`
     } else if (inputValueNumber % 10 === 2 || inputValueNumber % 10 === 3 || inputValueNumber % 10 === 4) {
         inputNumberOfPeople.value = `${inputValueNumber} человека`
     } else { inputNumberOfPeople.value = `${inputValueNumber} человек` }
