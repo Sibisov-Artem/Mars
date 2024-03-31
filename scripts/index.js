@@ -2,7 +2,10 @@ const root = document.querySelector('.root');
 const header = root.querySelector('.header');
 const buyTicketHeaderBtn = root.querySelector('.header__buy-btn');
 const buyTicketPopup = root.querySelector('.popup');
+const buyTicketTitle = buyTicketPopup.querySelector('.popup__title');
 const formBuyTicket = buyTicketPopup.querySelector('.popup__form');
+const inputCheckInDate = formBuyTicket.querySelector('.form__input_check-in-date');
+const inputCheckOutDate = formBuyTicket.querySelector('.form__input_check-out-date');
 const inputNumberOfPeople = formBuyTicket.querySelector('.form__input_number-of-people');
 const buyTicketBtn = buyTicketPopup.querySelector('.form__buy-btn');
 const popupCloseBtn = buyTicketPopup.querySelector('.popup__close-btn');
@@ -106,6 +109,41 @@ function enabledSubmitBtn() {
     buyTicketBtn.removeAttribute('disabled');
 }
 
+// функция валидации инпутов заезда и выезда (InDate и OutDate)
+function checkInOutDatesValidation(checkInDate, checkOutDate) {
+
+    if (checkInDate && checkOutDate) {
+        enabledSubmitBtn();
+        // для короректного сравнения дат в формате dd.mm.yyyy
+        // преобразуем их в формат yyyy.mm.dd
+        function converterOfDate(date) {
+            var parts = date.split(".");
+            return new Date(parts[2], parts[1] - 1, parts[0]);
+        }
+        let inDate = converterOfDate(checkInDate);
+        let outDate = converterOfDate(checkOutDate);
+
+        // если дата выезда меньше даты заезда - обменяем их значения
+        if (outDate < inDate) {
+            inputCheckInDate.value = checkOutDate;
+            inputCheckOutDate.value = checkInDate;
+        }
+
+        // проверяем что дата выезда больше чем через 365 дней от даты заезда
+        if (+outDate <= +inDate + 365 * 24 * 60 * 60 * 1000) {
+            buyTicketTitle.innerHTML = 'Выезжаем не ранее чем через год';
+            buyTicketTitle.classList.add('popup__title_message');
+            disabledSubmitBtn();
+        } else {
+            buyTicketTitle.innerHTML = 'Бронирование<br>билетов';
+            buyTicketTitle.classList.remove('popup__title_message');
+            enabledSubmitBtn();
+        };
+    } else {
+        disabledSubmitBtn();
+    }
+}
+
 // слушатель для смещения бэкграунда 
 // при пересечении указателем определенных границ ширины экрана
 root.addEventListener('mousemove', (e) => {
@@ -145,11 +183,21 @@ inputNumberOfPeople.addEventListener('input', function (evt) {
 });
 
 // слушатель дописания слова человек/человека в инпут при его покидании
-formBuyTicket.addEventListener('change', function () {
+inputNumberOfPeople.addEventListener('change', function () {
     let inputValueNumber = inputNumberOfPeople.value;
     if (inputValueNumber == 0) {
         inputNumberOfPeople.value = '';
     } else if (inputValueNumber % 10 === 2 || inputValueNumber % 10 === 3 || inputValueNumber % 10 === 4) {
         inputNumberOfPeople.value = `${inputValueNumber} человека`
     } else { inputNumberOfPeople.value = `${inputValueNumber} человек` }
+});
+
+// слушатель инпута заезда
+inputCheckInDate.addEventListener('change', function (evt) {
+    checkInOutDatesValidation(evt.target.value, inputCheckOutDate.value);
+});
+
+// слушатель инпута выезда
+inputCheckOutDate.addEventListener('change', function (evt) {
+    checkInOutDatesValidation(inputCheckInDate.value, evt.target.value);
 });

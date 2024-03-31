@@ -364,7 +364,7 @@
   font-size: 11.4rem;
   line-height: 1;
   letter-spacing: 0.285rem;
-  margin-bottom: 9.4rem;
+  min-height: 22.25vw;
 }
 @media screen and (max-width: 1270px) {
   .popup__title {
@@ -375,6 +375,10 @@
   .popup__title {
     font-size: 3.75rem;
   }
+}
+.popup__title_message {
+  color: #F23207;
+  margin-right: 4rem;
 }
 
 .form {
