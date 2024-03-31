@@ -18,6 +18,21 @@
   },
   "homepage": "https://github.com/Sibisov-Artem/Mars#readme",
   "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "6.1.0",
+    "gulp-sass": "^5.1.0",
     "sass": "^1.72.0"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "firefox >= 91",
+    "edge >= 92",
+    "chrome >= 93",
+    "opera >= 78",
+    "safari >= 12",
+    "ios >= 12",
+    "samsung >= 14",
+    "ie>= 10"
+  ]
 }
