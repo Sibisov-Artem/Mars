@@ -31,8 +31,11 @@ git clone https://github.com/Sibisov-Artem/Mars.git
 
 ## Команды для разработки
 
+'npm run sass:watch' - команда для онлайн разработки стилей в файл style.css, при изменении SCSS-файлов (автообновление при сохранении).
+Результат сохраняется в dist/styles.css;
+
 'gulp sass' - команда для перекомпиляции scss в css. 
 Scss берётся из styles/styles.scss, результат записывается в styles/styles.css;
 
 'gulp prefix' - команда для обработки css файла с добавлением префиксов к свойствам для повышения кроссбраузерности. 
-Файл берется из styles/styles.css, результат сохраняется в dist/styles.css
+Файл берется из styles/styles.css, результат сохраняется в dist/styles.css;

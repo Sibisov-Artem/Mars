@@ -15,6 +15,7 @@ const burgerMenu = header.querySelector('.navigation');
 const burgerMenuItems = burgerMenu.querySelector('.navigation__menu');
 const burgerMenuItem = burgerMenu.querySelectorAll('.navigation__item__link');
 const burgerMenuItemArr = Array.from(burgerMenuItem);  // создаем массив от burgerMenuItem
+const presentationVideo = root.querySelector('.presentation__video');
 
 // условие для изменения размера бэкграунда 
 // при определенном превышении высоты экрана над шириной.
@@ -23,6 +24,12 @@ const burgerMenuItemArr = Array.from(burgerMenuItem);  // создаем мас�
 // начинается вертикальный repeat
 if ((window.innerWidth / window.innerHeight) < (1280 / 965)) {
     root.style.backgroundSize = 'cover';
+}
+
+// условие для изменения размера ширины  видео в зависимости от пропорций экрана
+// чтобы не было наползания presentation на header при определенных разрешениях
+if ((window.innerWidth / window.innerHeight) > (1200/800)) {
+    presentationVideo.style.width = '80%';
 }
 
 // функция открытия попапа покупки билета
