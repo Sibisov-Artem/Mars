@@ -4,6 +4,7 @@
   "description": "application for buying a ticket for a flight to Mars",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass:watch": "sass --style=expanded --watch styles:dist"
   },
@@ -21,7 +22,8 @@
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "6.1.0",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.72.0"
+    "sass": "^1.72.0",
+    "vite": "^5.2.7"
   },
   "browserslist": [
     "last 2 versions",
