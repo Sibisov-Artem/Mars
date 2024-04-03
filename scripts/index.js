@@ -28,7 +28,7 @@ if ((window.innerWidth / window.innerHeight) < (1280 / 965)) {
 
 // условие для изменения размера ширины  видео в зависимости от пропорций экрана
 // чтобы не было наползания presentation на header при определенных разрешениях
-if ((window.innerWidth / window.innerHeight) > (1200/800)) {
+if ((window.innerWidth / window.innerHeight) > (1200 / 800)) {
     presentationVideo.style.width = '80%';
 }
 
@@ -151,6 +151,19 @@ function checkInOutDatesValidation(checkInDate, checkOutDate) {
     }
 }
 
+// функция по расстановке точек-разделителей для инпута дат
+function setDateSeparator(event) {
+    if (event.key.length > 1) return;
+    if (event.target.value.length < 10 && /\d/.test(event.key)) {
+        if (~[2, 5].indexOf(event.target.value.length)) {
+            event.target.value += '.';
+        }
+    }
+    else {
+        event.preventDefault()
+    }
+}
+
 // функция покупки билета
 function buyTicket(evt) {
     evt.preventDefault();
@@ -213,15 +226,21 @@ inputNumberOfPeople.addEventListener('change', function () {
     } else { inputNumberOfPeople.value = `${inputValueNumber} человек` }
 });
 
-// слушатель инпута заезда
+// слушатель инпута заезда по окончании изменения значения в нем (change)
 inputCheckInDate.addEventListener('change', function (evt) {
     checkInOutDatesValidation(evt.target.value, inputCheckOutDate.value);
 });
 
-// слушатель инпута выезда
+// слушатель инпута выезда по окончании изменения значения в нем (change)
 inputCheckOutDate.addEventListener('change', function (evt) {
     checkInOutDatesValidation(inputCheckInDate.value, evt.target.value);
 });
+
+// слушатель инпута заезда - автопостановка точки-разделителя даты
+inputCheckInDate.addEventListener('keydown', setDateSeparator)
+
+// слушатель инпута выезда - автопостановка точки-разделителя даты
+inputCheckOutDate.addEventListener('keydown', setDateSeparator)
 
 // слушатель сабмита формы покупки билета
 formBuyTicket.addEventListener('submit', buyTicket);
