@@ -55,8 +55,9 @@
 
                     <h1 class="presentation__title text-style">Точка назначения:</h1>
                     <div class="presentation__content">
-                        <video class="presentation__video" autoplay muted loop>
-                            <source src="./video/Mars.m4v">
+                        <video poster="images/poster-Mars.jpg" class="presentation__video" autoplay muted loop>
+                            <source src="/video/Mars.webm" type="video/webm">
+                            <source src="/video/Mars.mp4" type="video/mp4">
                         </video>
                     </div>
 
@@ -75,18 +76,21 @@
                     <fieldset class="form__container">
                         <div class="form__item">
                             <label class="form__input-title" for="check-in-date">Дата заезда</label>
-                            <input class="form__input form__input_check-in-date datepicker" type="text" required name="check-in-date"
-                                id="check-in-date" value="13.05.2022" placeholder="укажите дату заезда">
+                            <input class="form__input form__input_check-in-date datepicker" type="text" required
+                                name="check-in-date" id="check-in-date" value="13.05.2022"
+                                placeholder="укажите дату заезда">
                         </div>
                         <div class="form__item">
                             <label class="form__input-title" for="check-out-date">Дата выезда</label>
-                            <input class="form__input datepicker form__input_check-out-date" type="text" required name="check-out-date"
-                                id="check-out-date" value="13.05.2032" placeholder="укажите дату выезда">
+                            <input class="form__input datepicker form__input_check-out-date" type="text" required
+                                name="check-out-date" id="check-out-date" value="13.05.2032"
+                                placeholder="укажите дату выезда">
                         </div>
                         <div class="form__item">
                             <label class="form__input-title" for="number-of-people">Количество</label>
-                            <input class="form__input form__input_number-of-people" type="text" required name="number-of-people"
-                                id="number-of-people" value="1 человек" placeholder="укажите количество человек">
+                            <input class="form__input form__input_number-of-people" type="text" required
+                                name="number-of-people" id="number-of-people" value="1 человек"
+                                placeholder="укажите количество человек">
                             <button class="form__buy-btn text-style btn-hover" type="submit">Купить
                                 билеты</button>
                         </div>
