@@ -155,7 +155,7 @@ function checkInOutDatesValidation(checkInDate, checkOutDate) {
 function setDateSeparator(event) {
     if (event.key.length > 1) return;
     if (event.target.value.length < 10 && /\d/.test(event.key)) {
-        if (~[2, 5].indexOf(event.target.value.length)) {
+        if ([2, 5].indexOf(event.target.value.length) >= 0) {
             event.target.value += '.';
         }
     }
