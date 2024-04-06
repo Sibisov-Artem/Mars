@@ -697,6 +697,7 @@ html {
 .presentation__wrapper {
   position: relative;
   padding-top: 1rem;
+  margin: 0 auto;
 }
 .presentation__title {
   -webkit-animation: fade-in 1.2s ease-in-out forwards 1ms;
